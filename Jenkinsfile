@@ -11,14 +11,14 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running Robot Framework tests...'
-                sh 'robot 0803testrobot/'  // 假設你的測試檔案放在 tests 資料夾
+                bat 'robot 0803testrobot/'  // 假設你的測試檔案放在 tests 資料夾
             }
         }
     }
