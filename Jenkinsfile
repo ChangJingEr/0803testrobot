@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running Robot Framework tests...'
-                bat 'robot 0803testrobot/'  // 假設你的測試檔案放在 tests 資料夾
+                bat 'robot .'
             }
         }
     }
