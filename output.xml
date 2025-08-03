@@ -1,136 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-08-03T17:36:54.951108" rpa="false" schemaversion="5">
-<suite id="s1" name="Google Search" source="C:\Users\0803testrobot\google_search.robot">
-<test id="s1-t1" name="TC001 login success" line="9">
-<kw name="Open Browser To Login">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:36:55.110717" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-03T17:36:55.110576" elapsed="3.755092"/>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-08-03T20:25:50.506870" rpa="false" schemaversion="5">
+<suite id="s1" name="App Test" source="C:\Users\0803testrobot\app_test.robot">
+<test id="s1-t1" name="Login To Facebook App" line="18">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-08-03T20:25:50.627396" elapsed="7.972305"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-03T17:36:58.865852" elapsed="0.023201"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-03T20:26:03.600775" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-03T20:25:58.599993" elapsed="5.000865"/>
 </kw>
-<status status="PASS" start="2025-08-03T17:36:55.109997" elapsed="3.779166"/>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-08-03T20:26:03.602137" level="INFO">Typing text '12345678' into text field 'accessibility_id=用戶名稱'</msg>
+<arg>accessibility_id=用戶名稱</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-08-03T20:26:03.601261" elapsed="0.543146"/>
 </kw>
-<kw name="Input Information">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:36:58.889923" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
-<arg>id:user-name</arg>
-<arg>${account}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:36:58.889695" elapsed="0.057955"/>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-08-03T20:26:04.145582" level="INFO">Typing text '87654321' into text field 'accessibility_id=密碼'</msg>
+<arg>accessibility_id=密碼</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-08-03T20:26:04.144670" elapsed="0.538759"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:36:58.947961" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:36:58.947784" elapsed="0.043458"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-03T20:26:06.684671" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-03T20:26:04.684245" elapsed="2.000498"/>
 </kw>
-<arg>standard_user</arg>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-08-03T17:36:58.889443" elapsed="0.101909"/>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-03T20:26:06.685654" level="INFO">Clicking element 'accessibility_id=登入'.</msg>
+<arg>accessibility_id=登入</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-03T20:26:06.684944" elapsed="0.646810"/>
 </kw>
-<kw name="Click Login">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:36:58.991914" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:36:58.991807" elapsed="0.057510"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-03T20:26:12.332190" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-03T20:26:07.331953" elapsed="5.000322"/>
 </kw>
-<status status="PASS" start="2025-08-03T17:36:58.991622" elapsed="0.057778"/>
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-08-03T20:26:12.332480" elapsed="0.160744"/>
 </kw>
-<kw name="Login Title Should Be">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:36:59.049923" level="INFO">Verifying element 'class:title' contains exact text 'Products'.</msg>
-<arg>class:title</arg>
-<arg>${expect_title}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-08-03T17:36:59.049788" elapsed="0.012794"/>
-</kw>
-<arg>Products</arg>
-<status status="PASS" start="2025-08-03T17:36:59.049586" elapsed="0.013079"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-03T17:36:59.062874" elapsed="2.084760"/>
-</kw>
-<status status="PASS" start="2025-08-03T17:36:55.109427" elapsed="6.038385"/>
+<status status="PASS" start="2025-08-03T20:25:50.626849" elapsed="21.866591"/>
 </test>
-<test id="s1-t2" name="TC002 empty account" line="16">
-<kw name="Open Browser To Login">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:37:01.148749" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-03T17:37:01.148646" elapsed="1.548541"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-03T17:37:02.697403" elapsed="0.354545"/>
-</kw>
-<status status="PASS" start="2025-08-03T17:37:01.148485" elapsed="1.903546"/>
-</kw>
-<kw name="Input Information">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:37:03.052956" level="INFO">Typing text '' into text field 'id:user-name'.</msg>
-<arg>id:user-name</arg>
-<arg>${account}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:37:03.052713" elapsed="0.064943"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:37:03.117973" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:37:03.117805" elapsed="0.045762"/>
-</kw>
-<arg>${EMPTY}</arg>
-<arg>secret_sauce</arg>
-<status status="PASS" start="2025-08-03T17:37:03.052281" elapsed="0.111397"/>
-</kw>
-<kw name="Click Login">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:37:03.164210" level="INFO">Clicking button 'id:login-button'.</msg>
-<arg>id:login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-03T17:37:03.164104" elapsed="0.040600"/>
-</kw>
-<status status="PASS" start="2025-08-03T17:37:03.163916" elapsed="0.040901"/>
-</kw>
-<kw name="Error Message Should Be">
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-08-03T17:37:03.205523" level="INFO">Verifying element 'css:[data-test="error"]' contains exact text 'Epic sadface: Username is required'.</msg>
-<arg>css:[data-test="error"]</arg>
-<arg>${expect_message}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-08-03T17:37:03.205314" elapsed="0.012787"/>
-</kw>
-<arg>Epic sadface: Username is required</arg>
-<status status="PASS" start="2025-08-03T17:37:03.205052" elapsed="0.013132"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-08-03T17:37:03.218394" elapsed="2.081152"/>
-</kw>
-<status status="PASS" start="2025-08-03T17:37:01.148252" elapsed="4.151466"/>
-</test>
-<status status="PASS" start="2025-08-03T17:36:54.952113" elapsed="10.348149"/>
+<status status="PASS" start="2025-08-03T20:25:50.507936" elapsed="21.985909"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Google Search" id="s1" pass="2" fail="0" skip="0">Google Search</stat>
+<stat name="App Test" id="s1" pass="1" fail="0" skip="0">App Test</stat>
 </suite>
 </statistics>
 <errors>
